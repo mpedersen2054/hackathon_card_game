@@ -20,7 +20,7 @@ namespace ConsoleApplication
 
             System.Console.WriteLine("HELLLO KENNEN");
             System.Console.WriteLine("HELLLO matt from kennon");
-
+            System.Console.WriteLine("HELLLO Matt& Kennon from Jalal");
 
             for (int i = 0; i < matt.hand.Count; i++)
             {
