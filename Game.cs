@@ -56,6 +56,9 @@ namespace ConsoleApplication
             if (pcv == dcv)
             {
                 System.Console.WriteLine("Cards are Tied! Play0ff");
+
+                // KENNON TODO : Create a new list of cards here, then add each
+                // card to list. Pass list of cards(2) into the war method
                 War(playerTC, dealerTC);
                 // method should be written for playoff
             }
@@ -79,6 +82,7 @@ namespace ConsoleApplication
             System.Console.WriteLine("===================");
         }
 
+        // KENNON TODO: Make war take a list of cards, instead of 2 cards
         private void War(Card wc1, Card wc2)
         {
             Card playerDown = player.TakeTopCard();
