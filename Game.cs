@@ -52,6 +52,7 @@ namespace ConsoleApplication
             if (pcv == dcv)
             {
                 System.Console.WriteLine("Cards are Tied! Play0ff");
+                War(playerTC, dealerTC);
                 // method should be written for playoff
             }
             // Player Card is > Dealer Card
@@ -72,6 +73,16 @@ namespace ConsoleApplication
             System.Console.WriteLine("Player card: {0} :: Player hand {1}", pcv, player.hand.Count);
             System.Console.WriteLine("Dealer card: {0} :: Dealer hand {1}", dcv, dealer.hand.Count);
             System.Console.WriteLine("===================");
+        }
+
+        private void War(Card wc1, Card wc2)
+        {
+            Card playerDown = player.TakeTopCard();
+            Card dealerDown = dealer.TakeTopCard();
+            Card playerUp = player.TakeTopCard();
+            Card dealerUp = dealer.TakeTopCard();
+
+            
         }
 
 
