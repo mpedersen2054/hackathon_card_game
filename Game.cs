@@ -9,10 +9,12 @@ namespace ConsoleApplication
         public Player dealer;
         private int playerHardLen;
         private int dealerHandLen;
+        private int turnCount;
         public Game(Player playr, Player dealr)
         {
             player = playr;
             dealer = dealr;
+            turnCount = 0;
 
             playerHardLen = player.hand.Count;
             dealerHandLen = dealer.hand.Count;
@@ -32,6 +34,8 @@ namespace ConsoleApplication
 
             while (player.hand.Count > 1 || dealer.hand.Count > 1)
             {
+                turnCount++;
+                System.Console.WriteLine(turnCount);
                 PlayCards();
             }
 
@@ -82,7 +86,40 @@ namespace ConsoleApplication
             Card playerUp = player.TakeTopCard();
             Card dealerUp = dealer.TakeTopCard();
 
-            
+            int puc = playerUp.val;
+            int duc = dealerUp.val;
+
+            if (puc == 1) { puc = 14; }
+            if (duc == 1) { duc = 14; }
+
+            // if tie
+            if (puc == duc)
+            {
+                System.Console.WriteLine("DOUBLE WARRRRRRRRR!!!!");
+            }
+            if (puc > duc)
+            {
+                System.Console.WriteLine("PLAYER WON WARRRRR!!!!");
+                player.hand.Add(wc1);
+                player.hand.Add(wc2);
+                player.hand.Add(playerDown);
+                player.hand.Add(playerUp);
+                player.hand.Add(dealerDown);
+                player.hand.Add(dealerUp);
+            }
+            if (duc > puc)
+            {
+                System.Console.WriteLine("DEALER WON WARRRRRR!!!!");
+                dealer.hand.Add(wc1);
+                dealer.hand.Add(wc2);
+                dealer.hand.Add(playerDown);
+                dealer.hand.Add(playerUp);
+                dealer.hand.Add(dealerDown);
+                dealer.hand.Add(dealerUp);
+                
+            }
+            // if player win
+            // if dealer win
         }
 
 
