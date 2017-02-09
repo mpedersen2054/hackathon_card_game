@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\hackathon_card_game.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/deck_of_cards_2.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,

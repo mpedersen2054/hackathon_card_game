@@ -32,7 +32,7 @@ namespace ConsoleApplication
                 dealer.Draw(deck);
             }
 
-            while (player.hand.Count > 1 || dealer.hand.Count > 1)
+            while (player.hand.Count > 1 && dealer.hand.Count > 1)
             {
                 turnCount++;
                 System.Console.WriteLine(turnCount);
