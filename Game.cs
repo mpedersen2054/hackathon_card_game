@@ -32,10 +32,20 @@ namespace ConsoleApplication
 
             while (player.hand.Count > 1 || dealer.hand.Count > 1)
             {
-                PlayCard();
+                PlayCards();
             }
         }
 
-        
+        private void PlayCards()
+        {
+            Card playerTC = player.TakeTopCard();
+            Card dealerTC = dealer.TakeTopCard();
+            
+            System.Console.WriteLine("Player card: {0}", playerTC.val);
+            System.Console.WriteLine("Dealer card: {0}", dealerTC.val);
+            System.Console.WriteLine("===================");
+        }
+
+
     }
 }

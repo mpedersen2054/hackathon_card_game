@@ -27,6 +27,14 @@ namespace ConsoleApplication
                 return card;
             } catch { return null; }
         }
+
+        public Card TakeTopCard()
+        {
+            int removeIdx = hand.Count - 1;
+            Card topCard = hand[removeIdx];
+            hand.RemoveAt(removeIdx);
+            return topCard;
+        }
         
         public void ShowHandString()
         {
