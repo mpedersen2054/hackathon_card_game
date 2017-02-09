@@ -11,13 +11,14 @@ namespace ConsoleApplication
 
             Player matt = new Player("Matt");
             Player dealer = new Player("Dealer");
-            
 
             matt.Draw(deck);
             matt.Draw(deck);
             dealer.Draw(deck);
             dealer.Draw(deck);
             // deck.GetDeckLen();
+
+            System.Console.WriteLine("HELLLO KENNEN");
 
             for (int i = 0; i < matt.hand.Count; i++)
             {
