@@ -10,21 +10,8 @@ namespace ConsoleApplication
             Player matt = new Player("Matt");
             Player dealer = new Player("Dealer");
 
-            Deck deck = new Deck();
-            deck.Shuffle();
-
-            for (int i = 0; i < 26; i++)
-            {
-                matt.Draw(deck);
-                dealer.Draw(deck);
-            }
-
-            for (int i = 0; i < dealer.hand.Count; i++)
-            {
-                System.Console.WriteLine("matt: {0}", matt.hand[i].val);
-                System.Console.WriteLine("Dealer: {0}", dealer.hand[i].val);
-            }
-            System.Console.WriteLine(deck.count);
+            Game game = new Game(matt, dealer);
+            game.Start(); // splits the deck, gives player & dealer each 26 cards
         }
     }
 }

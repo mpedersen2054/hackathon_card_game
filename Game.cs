@@ -21,6 +21,15 @@ namespace ConsoleApplication
         public void Start()
         {
             System.Console.WriteLine("STARTING GAME");
+            Deck deck = new Deck();
+            deck.Shuffle();
+
+            for (int i = 0; i < 26; i++)
+            {
+                player.Draw(deck);
+                dealer.Draw(deck);
+            }
+            player.ShowHandString();
         }
     }
 }

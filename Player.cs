@@ -27,5 +27,15 @@ namespace ConsoleApplication
                 return card;
             } catch { return null; }
         }
+        
+        public void ShowHandString()
+        {
+            string handString = "";
+            foreach (Card card in hand)
+            {
+                handString += card.val + ", ";
+            }
+            System.Console.WriteLine(handString);
+        }
     }
 }
