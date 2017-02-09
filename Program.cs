@@ -14,20 +14,15 @@ namespace ConsoleApplication
 
             matt.Draw(deck);
             matt.Draw(deck);
-            matt.Draw(deck);
-            matt.Draw(deck);
             dealer.Draw(deck);
             dealer.Draw(deck);
             // deck.GetDeckLen();
 
-            matt.getHandString();
-
-
-            // for (int i = 0; i < matt.hand.Count; i++)
-            // {
-            //     System.Console.WriteLine("Matt: {0}", matt.hand[i].fullName);
-            //     System.Console.WriteLine("Dealer: {0}", dealer.hand[i].fullName);
-            // }
+            for (int i = 0; i < matt.hand.Count; i++)
+            {
+                System.Console.WriteLine("Matt: {0}", matt.hand[i].fullName);
+                System.Console.WriteLine("Dealer: {0}", dealer.hand[i].fullName);
+            }
 
             // object mattcard = matt.Discard(1);
             // if (mattcard is Card)
