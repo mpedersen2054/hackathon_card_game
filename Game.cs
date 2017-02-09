@@ -59,7 +59,10 @@ namespace ConsoleApplication
 
                 // KENNON TODO : Create a new list of cards here, then add each
                 // card to list. Pass list of cards(2) into the war method
-                War(playerTC, dealerTC);
+                List<Card> warList = new List<Card>();
+                warList.Add(playerTC);
+                warList.Add(dealerTC);
+                War(warList);
                 
             }
             // Player Card is > Dealer Card
@@ -83,15 +86,17 @@ namespace ConsoleApplication
         }
 
         // KENNON TODO: Make war take a list of cards, instead of 2 cards
-        private void War(Card wc1, Card wc2)
-        
-
-        
+        private void War(List<Card> warList)
         {
             Card playerDown = player.TakeTopCard();
             Card dealerDown = dealer.TakeTopCard();
             Card playerUp = player.TakeTopCard();
             Card dealerUp = dealer.TakeTopCard();
+
+            warList.Add(playerDown);
+            warList.Add(dealerDown);
+            warList.Add(playerUp);
+            warList.Add(dealerUp);
 
             int puc = playerUp.val;
             int duc = dealerUp.val;
@@ -102,33 +107,23 @@ namespace ConsoleApplication
             // if tie
             if (puc == duc)
             {
-                System.Console.WriteLine("DOUBLE WARRRRRRRRR!!!!");
+                War(warList);
             }
             if (puc > duc)
             {
-                System.Console.WriteLine("PLAYER WON WARRRRR!!!!");
-                player.hand.Add(wc1);
-                player.hand.Add(wc2);
-                player.hand.Add(playerDown);
-                player.hand.Add(playerUp);
-                player.hand.Add(dealerDown);
-                player.hand.Add(dealerUp);
+                foreach (Card card in warList)
+                {
+                    player.hand.Add(card);
+                }
             }
             if (duc > puc)
             {
-                System.Console.WriteLine("DEALER WON WARRRRRR!!!!");
-                dealer.hand.Add(wc1);
-                dealer.hand.Add(wc2);
-                dealer.hand.Add(playerDown);
-                dealer.hand.Add(playerUp);
-                dealer.hand.Add(dealerDown);
-                dealer.hand.Add(dealerUp);
-                
+                foreach (Card card in warList)
+                {
+                    dealer.hand.Add(card);
+                }
             }
-            // if player win
-            // if dealer win
         }
-
 
     }
 }
