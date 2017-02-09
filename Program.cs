@@ -14,6 +14,8 @@ namespace ConsoleApplication
 
             matt.Draw(deck);
             matt.Draw(deck);
+            matt.Draw(deck);
+            matt.Draw(deck);
             dealer.Draw(deck);
             dealer.Draw(deck);
             // deck.GetDeckLen();
