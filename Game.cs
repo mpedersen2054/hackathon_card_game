@@ -34,6 +34,7 @@ namespace ConsoleApplication
             {
                 PlayCards();
             }
+
         }
 
         private void PlayCards()
@@ -44,6 +45,24 @@ namespace ConsoleApplication
             System.Console.WriteLine("Player card: {0}", playerTC.val);
             System.Console.WriteLine("Dealer card: {0}", dealerTC.val);
             System.Console.WriteLine("===================");
+
+            // Player and Dealer tie
+            if (playerTC.val ==  dealerTC.val)
+                {
+                    System.Console.WriteLine("Cards are Tied! Play0ff");
+                    // method should be written for playoff
+
+                }
+            // Player Card is > Dealer Card
+            if (playerTC.val >  dealerTC.val)
+                {
+                    System.Console.WriteLine("Player Wins!");
+                }
+            // Dealer Card is > Player Card
+            if (dealerTC.val > playerTC.val)
+                {
+                    System.Console.WriteLine("Dealer Wins!");
+                }
         }
 
 
