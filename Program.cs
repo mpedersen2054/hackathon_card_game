@@ -19,6 +19,8 @@ namespace ConsoleApplication
             // deck.GetDeckLen();
 
             System.Console.WriteLine("HELLLO KENNEN");
+            System.Console.WriteLine("HELLLO matt from kennon");
+
 
             for (int i = 0; i < matt.hand.Count; i++)
             {
