@@ -53,21 +53,24 @@ namespace ConsoleApplication
             {
                 System.Console.WriteLine("Cards are Tied! Play0ff");
                 // method should be written for playoff
-
             }
             // Player Card is > Dealer Card
             if (pcv > dcv)
             {
                 System.Console.WriteLine("Player Wins!");
+                player.hand.Add(playerTC);
+                player.hand.Add(dealerTC);
             }
             // Dealer Card is > Player Card
             if (dcv > pcv)
             {
                 System.Console.WriteLine("Dealer Wins!");
+                dealer.hand.Add(playerTC);
+                dealer.hand.Add(dealerTC);
             }
 
-            System.Console.WriteLine("Player card: {0}", pcv);
-            System.Console.WriteLine("Dealer card: {0}", dcv);
+            System.Console.WriteLine("Player card: {0} :: Player hand {1}", pcv, player.hand.Count);
+            System.Console.WriteLine("Dealer card: {0} :: Dealer hand {1}", dcv, dealer.hand.Count);
             System.Console.WriteLine("===================");
         }
 
