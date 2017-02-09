@@ -30,9 +30,8 @@ namespace ConsoleApplication
 
         public Card TakeTopCard()
         {
-            int removeIdx = hand.Count - 1;
-            Card topCard = hand[removeIdx];
-            hand.RemoveAt(removeIdx);
+            Card topCard = hand[0];
+            hand.RemoveAt(0);
             return topCard;
         }
         
