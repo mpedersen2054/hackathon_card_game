@@ -29,17 +29,6 @@ namespace ConsoleApplication
                 "    {0}     \t",    
             };
 
-            // string ri1 = "\t┌─────────┐\t";
-            // string ri2 = "\t│{0}         │\t";
-            // string ri3 = "\t│         │\t";
-            // string ri4 = "\t│         │\t";
-            // string ri5 = "\t│    {0}     │\t";
-            // string ri6 = "\t│         │\t";
-            // string ri7 = "\t│         │\t";
-            // string ri8 = "\t│       {0}  │\t";
-            // string ri9 = "\t└─────────┘\t";
-            // string ri10 = "\t    {0}     \t";
-
             for (int i = 0; i < 10; i++)
             {
                 for (var j = 0; j < hand.Count; j++)
