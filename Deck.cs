@@ -7,15 +7,18 @@ namespace ConsoleApplication
     {
         Random rand = new Random();
         string[] suits = { "Clubs", "Diamonds", "Hearts", "Spades" };
-        public List<Card> cards = new List<Card>();
+        public List<Card> cards;
+        public int count;
         
         public Deck()
         {
+            cards = new List<Card>();
+            count = GetDeckLen();
             ResetDeck();
         }
-        public void GetDeckLen()
+        public int GetDeckLen()
         {
-            System.Console.WriteLine(cards.Count);
+            return cards.Count;
         }
 
         public void Shuffle()
@@ -31,12 +34,6 @@ namespace ConsoleApplication
                 int newIdx = rand.Next(0, cards.Count);
                 cards.Insert(newIdx, currCard);
             }
-
-            // // print out each card
-            // foreach (Card card in cards)
-            // {
-            //     System.Console.WriteLine(card.fullName);
-            // }
         }
 
         public Card Deal()
@@ -60,12 +57,6 @@ namespace ConsoleApplication
                     cards.Add(new Card(suit, i));
                 }
             }
-
-            // print out each card in new deck & deck.Count
-            // foreach (Card card in cards)
-            // {
-            //     System.Console.WriteLine(card.imageString.image);
-            // }
         }
     }
 }

@@ -19,18 +19,13 @@ namespace ConsoleApplication
             return newCard;
         }
 
-        public object Discard(int desiredIdx)
+        public Card Discard(int desiredIdx)
         {
             try {
                 Card card = hand[desiredIdx];
                 hand.RemoveAt(desiredIdx);
                 return card;
             } catch { return null; }
-        }
-        public void getHandString()
-        {
-            CardImages handStr = new CardImages(hand);
-            System.Console.WriteLine(handStr.handString);
         }
     }
 }
