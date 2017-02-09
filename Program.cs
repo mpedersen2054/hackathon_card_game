@@ -11,6 +11,7 @@ namespace ConsoleApplication
 
             Player matt = new Player("Matt");
             Player dealer = new Player("Dealer");
+            
 
             matt.Draw(deck);
             matt.Draw(deck);
