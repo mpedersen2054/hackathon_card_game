@@ -29,7 +29,13 @@ namespace ConsoleApplication
                 player.Draw(deck);
                 dealer.Draw(deck);
             }
-            player.ShowHandString();
+
+            while (player.hand.Count > 1 || dealer.hand.Count > 1)
+            {
+                PlayCard();
+            }
         }
+
+        
     }
 }
