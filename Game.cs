@@ -32,11 +32,23 @@ namespace ConsoleApplication
                 dealer.Draw(deck);
             }
 
-            while (player.hand.Count > 1 && dealer.hand.Count > 1)
+            while (player.hand.Count > 8 && dealer.hand.Count > 8)
             {
                 turnCount++;
                 System.Console.WriteLine(turnCount);
                 PlayCards();
+            }
+            if (player.hand.Count > dealer.hand.Count)
+            {
+                System.Console.WriteLine("\n\n==============");
+                System.Console.WriteLine("PLAYER WON THE GAME!!!");
+                System.Console.WriteLine("==============");
+            }
+            else
+            {
+                System.Console.WriteLine("\n\n==============");
+                System.Console.WriteLine("DEALER WON THE GAME!!!");
+                System.Console.WriteLine("==============");
             }
 
         }
@@ -56,9 +68,6 @@ namespace ConsoleApplication
             if (pcv == dcv)
             {
                 System.Console.WriteLine("Cards are Tied! Play0ff");
-
-                // KENNON TODO : Create a new list of cards here, then add each
-                // card to list. Pass list of cards(2) into the war method
                 List<Card> warList = new List<Card>();
                 warList.Add(playerTC);
                 warList.Add(dealerTC);
@@ -88,18 +97,27 @@ namespace ConsoleApplication
         // KENNON TODO: Make war take a list of cards, instead of 2 cards
         private void War(List<Card> warList)
         {
-            Card playerDown = player.TakeTopCard();
-            Card dealerDown = dealer.TakeTopCard();
-            Card playerUp = player.TakeTopCard();
-            Card dealerUp = dealer.TakeTopCard();
+            Card pd1 = player.TakeTopCard();
+            Card pd2 = player.TakeTopCard();
+            Card pd3 = player.TakeTopCard();
+            Card pu = player.TakeTopCard();
 
-            warList.Add(playerDown);
-            warList.Add(dealerDown);
-            warList.Add(playerUp);
-            warList.Add(dealerUp);
+            Card dd1 = player.TakeTopCard();
+            Card dd2 = player.TakeTopCard();
+            Card dd3 = player.TakeTopCard();
+            Card du = player.TakeTopCard();
 
-            int puc = playerUp.val;
-            int duc = dealerUp.val;
+            warList.Add(pd1);
+            warList.Add(pd2);
+            warList.Add(pd3);
+            warList.Add(pu);
+            warList.Add(dd1);
+            warList.Add(dd2);
+            warList.Add(dd3);
+            warList.Add(du);
+
+            int puc = pu.val;
+            int duc = du.val;
 
             if (puc == 1) { puc = 14; }
             if (duc == 1) { duc = 14; }
