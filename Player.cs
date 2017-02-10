@@ -32,7 +32,14 @@ namespace ConsoleApplication
         {
             Card topCard = hand[0];
             hand.RemoveAt(0);
-            return topCard;
+            if (topCard != null)
+            {
+                return topCard;
+            }
+            else
+            {
+                return null;
+            }
         }
         
         public void ShowHandString()
